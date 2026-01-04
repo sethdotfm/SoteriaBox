@@ -35,3 +35,6 @@ flowchart LR
     L_n1_n3_0@{ animation: slow } 
     L_n2_n3_0@{ animation: fast }
 ```
+
+# Notes
+- Run Netdata in stream mode to save a surprising amount of resources. Disable ```[db]```, ```[web]```, and ```[health]``` in netdata.conf.
