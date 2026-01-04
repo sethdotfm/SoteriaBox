@@ -1,0 +1,22 @@
+services:
+  pbs:
+    image: ${IMAGE:-ayufan/proxmox-backup-server:${TAG:-latest}}
+    container_name: pbs
+    hostname: soteria-alfa-pbs
+    restart: unless-stopped
+    ports:
+      - 8007:8007
+    mem_limit: 2G
+    volumes:
+      - pbs_etc:/etc/proxmox-backup
+      - pbs_logs:/var/log/proxmox-backup
+      - /alfa_pool_1/pbs_data/datastore:/var/lib/proxmox-backup/mnt/datastore
+    tmpfs:
+      - /run
+    cap_add:
+      - SYS_RAWIO
+    stop_signal: SIGHUP
+
+volumes:
+  pbs_etc:
+  pbs_logs:
