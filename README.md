@@ -18,7 +18,7 @@ flowchart LR
     n6["In Waveshare PoE/M.2 Hat"] --- n2
     n1 L_n1_n3_0@<-- "USB 3.0 | Type Micro B 3.0 -&gt; Type A" --> n3
     n2 L_n2_n3_0@<--> n3
-    n3 --> n7["NUT"] & n8["Tailscale"] & n9["Docker Compose"] & n14["Netdata"] & n15["Caddy"]
+    n3 --> n7["NUT"] & n8["Tailscale"] & n9["Docker Compose"] & n14["Netdata"] & n15["Nginx PM"]
     n9 --> n10 & n11["Proxmox Backup Server"] & n12["Cloudflared"] & n13
 
     n1@{ shape: disk}
